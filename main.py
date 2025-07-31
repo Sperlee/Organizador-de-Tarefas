@@ -2,9 +2,12 @@ from classes import *
 from tkinter import *
 from tkinter import ttk
 
+
 lista_tarefas = []
 
 root = Tk()
+root.title("Organizador de Tarefas")
+
 
 widget_principal = ttk.Frame(root)
 widget_tarefas = ttk.Frame(widget_principal)
@@ -15,10 +18,10 @@ botão_criar_tarefa = ttk.Button(widget_menu,text="Nova Task",command=lambda: cr
 
 
 widget_principal.grid(row=0,column=0)
-widget_menu.grid(row=0,column=0)
-botão_criar_tarefa.grid()
-widget_tarefas.grid(row=2,column=1)
+widget_menu.grid(row=0,column=0, sticky="ew")  # Menu no topo
+botão_criar_tarefa.grid(row=0,column=0)
+widget_tarefas.grid(row=1,column=0, sticky="ew")  # Tarefas logo abaixo
 
 
-root.geometry("800x600")
+root.geometry("600x800")
 root.mainloop()
